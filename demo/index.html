@@ -6,32 +6,32 @@
             body {
                 background: #F5F6F8;
             }
-            #stepbar {
+            .content {
                 position: absolute;
-                width: 340px;
                 top: 50%;
                 left: 50%;
-                margin-top: -27px;
+                margin-top: -37px;
                 margin-left: -170px;
+            }
+            #myStepbar {
+                width: 340px;
+            }
+            #controls {
+                text-align: center;
+                margin-top: 30px;
             }
         </style>
     </head>
     <body>
-        <div id="stepbar" class="stepbar">
-            <div class="stepbar-container">
-                <div class="stepbar-tooltip">Text tooltip</div>
-                <div class="stepbar-bar">
-                    <div class="stepbar-steps">
-                        <div class="stepbar-step completed"></div>
-                        <div class="stepbar-step completed"></div>
-                        <div class="stepbar-step active"></div>
-                        <div class="stepbar-step"></div>
-                        <div class="stepbar-step"></div>
-                        <div class="stepbar-step"></div>
-                    </div>
-                    <div class="stepbar-progress"></div>
-                </div>
+        <div class="content">
+            <div id="myStepbar" class="stepbar" data-steps='["Start", "Step 2", "Step 3", "Step 4", "Completed"]'></div>
+
+            <div id="controls">
+                <button onclick="stepbar.prev();">Previous</button>
+                <button onclick="stepbar.next();">Next</button>
             </div>
         </div>
+
+        <script src="../js/stepbar.min.js"></script>
     </body>
 </html>

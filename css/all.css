@@ -29,18 +29,18 @@
   top: 100%;
   left: 50%;
   margin-left: -6px;
-  border-top: 6px solid black;
+  border-top: 6px solid transparent;
   border-top-color: inherit;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
 }
 .stepbar .stepbar-container .stepbar-bar {
   margin-top: 10px;
-  -webkit-border-radius: 12px;
+  -webkit-border-radius: 11px;
   -webkit-background-clip: padding-box;
-  -moz-border-radius: 12px;
+  -moz-border-radius: 11px;
   -moz-background-clip: padding;
-  border-radius: 12px;
+  border-radius: 11px;
   background-clip: padding-box;
   overflow: hidden;
   position: relative;
@@ -49,17 +49,17 @@
   width: 100%;
   display: table;
   position: absolute;
-  -webkit-border-radius: 12px;
+  -webkit-border-radius: 11px;
   -webkit-background-clip: padding-box;
-  -moz-border-radius: 12px;
+  -moz-border-radius: 11px;
   -moz-background-clip: padding;
-  border-radius: 12px;
+  border-radius: 11px;
   background-clip: padding-box;
 }
 .stepbar .stepbar-container .stepbar-bar .stepbar-steps .stepbar-step {
   position: relative;
   display: table-cell;
-  height: 24px;
+  height: 22px;
   border-right: 1px solid #d9d9d9;
 }
 .stepbar .stepbar-container .stepbar-bar .stepbar-steps .stepbar-step:before {
@@ -91,7 +91,7 @@
   background-position: center center;
 }
 .stepbar .stepbar-container .stepbar-bar .stepbar-progress {
-  height: 24px;
+  height: 22px;
   -webkit-box-shadow: inset 0 2px 3px #b1b9c1;
   -moz-box-shadow: inset 0 2px 3px #b1b9c1;
   box-shadow: inset 0 2px 3px #b1b9c1;

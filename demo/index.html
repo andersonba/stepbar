@@ -8,26 +8,29 @@
             }
             #stepbar {
                 position: absolute;
-                width: 400px;
+                width: 340px;
                 top: 50%;
                 left: 50%;
-                margin-top: -13px;
-                margin-left: -200px;
+                margin-top: -27px;
+                margin-left: -170px;
             }
         </style>
     </head>
     <body>
         <div id="stepbar" class="stepbar">
             <div class="stepbar-container">
-                <div class="stepbar-steps">
-                    <div class="stepbar-step completed" title="1) You are here"></div>
-                    <div class="stepbar-step active" title="2) Now, here"></div>
-                    <div class="stepbar-step" title="3) Now, here"></div>
-                    <div class="stepbar-step" title="4) Now, here"></div>
-                    <div class="stepbar-step" title="5) Now, here"></div>
-                    <div class="stepbar-step" title="6) Complete!"></div>
+                <div class="stepbar-tooltip">Text tooltip</div>
+                <div class="stepbar-bar">
+                    <div class="stepbar-steps">
+                        <div class="stepbar-step completed"></div>
+                        <div class="stepbar-step completed"></div>
+                        <div class="stepbar-step active"></div>
+                        <div class="stepbar-step"></div>
+                        <div class="stepbar-step"></div>
+                        <div class="stepbar-step"></div>
+                    </div>
+                    <div class="stepbar-progress"></div>
                 </div>
-                <div class="stepbar-progress"></div>
             </div>
         </div>
     </body>

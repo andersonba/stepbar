@@ -11,22 +11,49 @@
             totalSteps = 0;
 
         /**
-         * Resets stepbar
+         * Gets the current step number
+         * @return {Number} Step number
+         */
+        this.getCurrentStep = function() {
+            return currentStep;
+        };
+
+        /**
+         * Starts stepbar
          * @return {StepBar} StepBar
          */
-        this.reset = function() {
+        this.start = function() {
             this.step(1);
             return this;
         };
 
+        /**
+         * Completes stepbar
+         * @return {StepBar} StepBar
+         */
+        this.complete = function() {
+            this.step(totalSteps);
+            return this;
+        };
+
+        /**
+         * Goes next one step
+         * @return {StepBar} StepBar
+         */
         this.next = function() {
             var to = currentStep + 1;
             if (to <= totalSteps) this.step(to);
+            return this;
         };
 
+        /**
+         * Goes back one step
+         * @return {StepBar} StepBar
+         */
         this.prev = function() {
             var to = currentStep - 1;
-            if (to > 0 && to <= totalSteps) this.step(to);
+            if (to > 0) this.step(to);
+            return this;
         };
 
         /**
@@ -46,7 +73,7 @@
                 // Reset
                 el.className = 'stepbar-step';
                 // Previous sets to completed
-                if (i < idx - 1 || idx == steps.length)
+                if (i < (idx - 1) || idx === steps.length)
                     el.className += ' completed';
             });
 
@@ -65,6 +92,11 @@
             return this;
         };
 
+        /**
+         * Renders stepbar to given element
+         * @param  {object} el Given element to render
+         * @return {StepBar}    StepBar
+         */
         this.render = function(el) {
             var containerEl = document.createElement('div'),
                 tooltipEl = document.createElement('div'),
@@ -75,12 +107,12 @@
                 steps,
                 i;
 
-            // Gets steps
+            // Gets steps from JSON object
             steps = JSON.parse(el.getAttribute('data-steps'));
             if (!steps) return;
             totalSteps = steps.length;
 
-            // Classes
+            // Adds Classes
             containerEl.className = 'stepbar-container';
             tooltipEl.className = 'stepbar-tooltip';
             barEl.className = 'stepbar-bar';
@@ -88,25 +120,26 @@
             stepsEl.className = 'stepbar-steps';
             progressEl.className = 'stepbar-progress';
 
-            // Mounts steps
+            // Creates steps
             for (i = 0, len = steps.length; i < len; ++i) {
                 var iEl = stepEl.cloneNode(true);
                 iEl.setAttribute('title', steps[i]);
                 stepsEl.appendChild(iEl);
             }
 
-            // Renders
+            // Renders elements
             barEl.appendChild(stepsEl);
             barEl.appendChild(progressEl);
             containerEl.appendChild(tooltipEl);
             containerEl.appendChild(barEl);
             el.appendChild(containerEl);
 
-            this.reset();
+            // Starts stepbar
+            this.start();
         };
 
         /**
-         * Init stepbar, rendering all elements contains 'stepbar' className
+         * Init stepbar, rendering all elements contains 'stepbar' in className
          * @return {StepBar} StepBar
          */
         this.init = function() {

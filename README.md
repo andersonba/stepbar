@@ -5,6 +5,8 @@ Clean step bar that shows you where you are in the order progress
 
 ![Preview stepbar](http://andersonba.com/stepbar/stepbar.jpg)
 
+So, why not check out a [demo](http://andersonba.com/stepbar)?
+
 General
 =======
 To get started using StepBar, simply include ```stepbar.min.js``` and ```stepbar.min.css``` on your page. Add the ```stepbar``` class in the target element and define steps passing JSON object in ```data-steps```, see example:

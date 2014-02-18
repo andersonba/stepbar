@@ -1,4 +1,5 @@
 (function(context, namespace) {
+    "use strict";
 
     var StepBar,
         winStepBar = context[namespace];
@@ -106,6 +107,7 @@
                 stepsEl = document.createElement('div'),
                 progressEl = document.createElement('div'),
                 steps,
+                len,
                 i;
 
             // Gets steps from JSON object

@@ -41,9 +41,9 @@ gulp.task('build', function() {
 
     gulp.src(scriptFile)
         .pipe(watch(function(files) {
-            return files.pipe(concat('stepbar.min.js'))
-                        .pipe(jshint())
+            return files.pipe(jshint())
                         .pipe(reporter)
+                        .pipe(concat('stepbar.min.js'))
                         .pipe(uglify())
                         .pipe(gulp.dest(scriptDist));
         }));

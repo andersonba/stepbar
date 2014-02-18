@@ -9,11 +9,15 @@ So, why not check out a [demo](http://andersonba.com/stepbar)?
 
 General
 =======
-To get started using StepBar, simply include ```stepbar.min.js``` and ```stepbar.min.css``` on your page. Add the ```stepbar``` class in the target element and define steps passing JSON object in ```data-steps```, see example:
+To get started using StepBar, simply include ```stepbar.min.js``` and ```stepbar.min.css``` on your page. Add the ```stepbar``` class in the target element and define steps passing JSON object in ```data-steps``` attribute, see example:
 
     <div class="stepbar" data-steps='["Start", "Step 2", "Step 3", "Step 4", "Completed"]'></div>
     
-This will load the stepbar object into the global window object for you. The StepBar comes with a simple API with which you can manage steps.
+You can force the stepbar to start from custom step defined in html, passing the number in ```data-step``` attribute, see below: 
+
+	<div class="stepbar" data-step="2" data-steps='["One", "Two", "Three"]'></div>
+    
+This will load the stepbar object into the global window object for you. The StepBar comes with a simple API with which you can manage stepbar.
 
 - ```stepbar.step(idx)``` - Changes current step
 - ```stepbar.getCurrentStep()``` - Gets the current step number

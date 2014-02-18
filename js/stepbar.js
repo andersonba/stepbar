@@ -106,14 +106,20 @@
                 stepCellEl = document.createElement('div'),
                 stepsEl = document.createElement('div'),
                 progressEl = document.createElement('div'),
+                initialStep = 1,
                 steps,
                 len,
                 i;
 
-            // Gets steps from JSON object
+            // Gets steps from JSON object attribute
             steps = JSON.parse(el.getAttribute('data-steps'));
             if (!steps) return;
             totalSteps = steps.length;
+
+            // Gets initial step from attribute
+            if (el.getAttribute('data-step') !== null) {
+                initialStep = parseInt(el.getAttribute('data-step'));
+            }
 
             // Adds Classes
             containerEl.className = 'stepbar-container';
@@ -140,8 +146,12 @@
             containerEl.appendChild(barEl);
             el.appendChild(containerEl);
 
-            // Starts stepbar
-            this.start();
+            // Starts stepbar from custom inital or default step
+            try {
+                this.step(initialStep);
+            } catch (e) {
+                this.start();
+            }
         };
 
         /**

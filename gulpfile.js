@@ -55,11 +55,11 @@ gulp.task('build', function() {
 
     gulp.src(lessFile)
         .pipe(watch(function(files) {
-            return files.pipe(concat('all.less'))
+            return files.pipe(concat('stepbar.less'))
                         .pipe(less())
                         .pipe(gulp.dest(lessDist))
                         .pipe(minify())
-                        .pipe(rename('all.min.css'))
+                        .pipe(rename('stepbar.min.css'))
                         .pipe(gulp.dest(lessDist));
         }));
 });

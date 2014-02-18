@@ -102,6 +102,7 @@
                 tooltipEl = document.createElement('div'),
                 barEl = document.createElement('div'),
                 stepEl = document.createElement('div'),
+                stepCellEl = document.createElement('div'),
                 stepsEl = document.createElement('div'),
                 progressEl = document.createElement('div'),
                 steps,
@@ -117,14 +118,17 @@
             tooltipEl.className = 'stepbar-tooltip';
             barEl.className = 'stepbar-bar';
             stepEl.className = 'stepbar-step';
+            stepCellEl.className = 'stepbar-cell-step';
             stepsEl.className = 'stepbar-steps';
             progressEl.className = 'stepbar-progress';
 
             // Creates steps
             for (i = 0, len = steps.length; i < len; ++i) {
-                var iEl = stepEl.cloneNode(true);
+                var iEl = stepEl.cloneNode(true),
+                    iCellEl = stepCellEl.cloneNode(true);
                 iEl.setAttribute('title', steps[i]);
-                stepsEl.appendChild(iEl);
+                iCellEl.appendChild(iEl);
+                stepsEl.appendChild(iCellEl);
             }
 
             // Renders elements

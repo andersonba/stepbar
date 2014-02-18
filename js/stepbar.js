@@ -163,7 +163,9 @@
                 self = this;
 
             Array.prototype.forEach.call(stepbars, function(el) {
-                self.render(el);
+                // prevent re-rendering
+                if (!el.children.length)
+                    self.render(el);
             });
         };
     };

@@ -62,11 +62,11 @@
 }
 .stepbar .stepbar-container .stepbar-bar .stepbar-steps .stepbar-cell-step {
   display: table-cell;
+  border-right: 1px solid #d9d9d9;
 }
 .stepbar .stepbar-container .stepbar-bar .stepbar-steps .stepbar-cell-step .stepbar-step {
   position: relative;
   height: 22px;
-  border-right: 1px solid #d9d9d9;
 }
 .stepbar .stepbar-container .stepbar-bar .stepbar-steps .stepbar-cell-step .stepbar-step:before {
   content: '';

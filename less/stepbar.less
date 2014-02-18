@@ -43,10 +43,10 @@
                 .border-radius(@stepbar-height/2);
                 .stepbar-cell-step {
                     display: table-cell;
+                    border-right: 1px solid darken(@progress-font, 15%);
                     .stepbar-step {
                         position: relative;
                         height: @stepbar-height;
-                        border-right: 1px solid darken(@progress-font, 15%);
                         &:before {
                             content: '';
                         }
